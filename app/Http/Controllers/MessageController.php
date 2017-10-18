@@ -44,6 +44,24 @@ class MessageController extends Controller
 
 
 
+
+
+
     }
+
+
+    public function getMessages()
+    {
+
+        $messages = Message::orderBy('id', 'DESC')->get();
+
+        return view('messages')->with('messages', $messages);
+
+
+
+    }
+
+
+
 
 }
